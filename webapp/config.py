@@ -1,11 +1,12 @@
 import urllib
 from os import path 
-from webapp.app_config import SQLSERVER_PASSWORD, SQLSERVER_USERNAME
+#from webapp.app_config import SQLSERVER_PASSWORD, SQLSERVER_USERNAME
 
 class Config(object):
     SECRET_KEY = '67a6dd4017a702fcf141038666d7faa9'
     RECAPTCHA_PUBLIC_KEY = "6LdKkQQTAAAAAEH0GFj7NLg5tGicaoOus7G9Q5Uw"    
     RECAPTCHA_PRIVATE_KEY = '6LdKkQQTAAAAAMYroksPTJ7pWhobYb88fTAcxcYn' 
+    
 
 class ProdConfig(Config):
     pass
@@ -13,6 +14,8 @@ class ProdConfig(Config):
 class DevConfig(Config):
     DEBUG = True
     testing=True
+    SQLSERVER_PASSWORD = "password"
+    SQLSERVER_USERNAME = "username"
     mssql_db = "mssql+pyodbc://localhost\\SQLEXPRESS/masteringflask?driver=SQL+Server+Native+Client+10.0"
     mssql_local = 'DRIVER={SQL Server};SERVER=localhost\SQLEXPRESS;DATABASE=masteringflask;Trusted_Connection=yes'
     sqlite_conn = "sqlite:///masteringflask.sqlite"

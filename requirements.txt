@@ -1,0 +1,7 @@
+Flask
+Flask-Script
+Flask-Migrate
+Flask-Bcrypt
+Flask-WTF
+Flask-SqlAlchemy
+
